@@ -158,10 +158,10 @@ You can start clients for any of these campuses:
 ## 🏗️ Project Architecture
 
 ```
-┌─────────────────────────────────────────────────────┐
-│         NU-Information Exchange System              │
-├─────────────────────────────────────────────────────┤
-│                                                     │
+┌───────────────────────────────────────────────────┐
+│         NU-Information Exchange System            │
+├───────────────────────────────────────────────────┤
+│                                                   │
 │  ┌──────────────────┐        ┌──────────────────┐ │
 │  │  Central Server  │        │  Admin Console   │ │
 │  │  (Islamabad)     │◄──────►│  (Monitoring)    │ │
@@ -170,19 +170,19 @@ You can start clients for any of these campuses:
 │  │ ├─ UDP Port 9001 │                             │
 │  │ └─ Router        │                             │
 │  └────┬─────────────┘                             │
-│       │                                            │
+│       │                                           │
 │   ┌───┴───┬────────┬─────────┬──────────┐         │
 │   │       │        │         │          │         │
-│  ┌─▼─┐  ┌─▼─┐  ┌──▼─┐  ┌───▼──┐  ┌────▼─┐      │
-│  │L1 │  │K1 │  │ P1 │  │ I1   │  │ M1  │      │
-│  │   │  │   │  │    │  │      │  │     │      │
-│  │TCP◄──┤TCP├──┤TCP │  │ TCP  │  │ TCP │      │
-│  │UDP│  │UDP│  │UDP │  │ UDP  │  │ UDP │      │
-│  └───┘  └───┘  └────┘  └──────┘  └─────┘      │
-│  Lab1   Kar1   Pes1    Isl1     Mul1          │
-│ Lahore Karachi Peshawar Islamabad Multan      │
-│                                                │
-└─────────────────────────────────────────────────────┘
+│  ┌─▼─┐  ┌─▼─┐  ┌──▼─┐  ┌───▼──┐  ┌───▼─┐          │
+│  │L1 │  │K1 │  │ P1 │  │ I1   │  │  M1 │          │
+│  │   │  │   │  │    │  │      │  │     │          │
+│  │TCP◄──┤TCP├──┤TCP │  │ TCP  │  │  TCP│          │
+│  │UDP│  │UDP│  │UDP │  │ UDP  │  │  UDP│          │
+│  └───┘  └───┘  └────┘  └──────┘  └─────┘          │
+│  Lab1   Kar1   Pes1    Isl1     Mul1              │
+│ Lahore Karachi Peshawar Islamabad Multan          │
+│                                                   │
+└───────────────────────────────────────────────────┘
 ```
 
 ## 📁 Project Structure
@@ -201,7 +201,7 @@ University-Information-Exchange-System/
 │       ├── client.cpp              # Client implementation
 │       └── main_client.cpp         # Client entry point
 ├── Makefile                        # Build configuration
-├── setup.sh                        # Setup script
+├── setup.sh                        # Setup 
 ├── test.sh                         # Testing script
 ├── quick_commands.sh               # Quick reference
 ├── requirements.txt                # Project specifications
