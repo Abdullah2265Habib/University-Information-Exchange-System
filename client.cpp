@@ -1,36 +1,10 @@
-// client.cpp
-// Campus Client for NU-Information Exchange System
-
-#include <iostream>
-#include <string>
-#include <thread>
-#include <vector>
-#include <mutex>
-#include <chrono>
-#include <sstream>
-#include <winsock2.h>
-#include <ws2tcpip.h>
-
-#pragma comment(lib, "ws2_32.lib")
-
-#define SERVER_IP "127.0.0.1"
-#define TCP_PORT 9000
-#define UDP_PORT 9001
-
-std::vector<std::string> messages;
-std::mutex mtx;
-bool running = true;
-
-// Helper function to get current timestamp
-std::string currentTime() {
-    auto now = std::chrono::system_clock::now();
-    std::time_t now_c = std::chrono::system_clock::to_time_t(now);
-    char buf[100];
-    ctime_s(buf, sizeof(buf), &now_c);
-    std::string timeStr(buf);
-    timeStr.erase(timeStr.find_last_not_of(" \n\r\t") + 1);
-    return timeStr;
-}
+// DEPRECATED: This file has been moved to src/client/
+// Please use the Linux-compatible modular version in src/client/
+//
+// Build with: make all
+// Run with: make run-client CAMPUS_NAME=Lahore
+//
+// See BUILD_GUIDE_LINUX.md for complete instructions
 
 // Thread function to receive incoming TCP messages
 void tcpReceiveThread(SOCKET tcpSock) {

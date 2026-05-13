@@ -1,49 +1,10 @@
-// server.cpp
-// Central Server for NU-Information Exchange System
-
-#include <iostream>
-#include <string>
-#include <thread>
-#include <vector>
-#include <map>
-#include <mutex>
-#include <chrono>
-#include <sstream>
-#include <winsock2.h>
-#include <ws2tcpip.h>
-
-#pragma comment(lib, "ws2_32.lib")
-
-#define TCP_PORT 9000
-#define UDP_PORT 9001
-
-// Global data structures to maintain connected clients and their state
-std::map<std::string, SOCKET> tcp_clients;
-std::map<std::string, sockaddr_in> udp_clients;
-std::map<std::string, std::string> last_heartbeat;
-std::mutex mtx; // Mutex for thread-safe access to global maps
-
-// Helper function to get current timestamp as a string
-std::string currentTime() {
-    auto now = std::chrono::system_clock::now();
-    std::time_t now_c = std::chrono::system_clock::to_time_t(now);
-    char buf[100];
-    ctime_s(buf, sizeof(buf), &now_c);
-    std::string timeStr(buf);
-    timeStr.erase(timeStr.find_last_not_of(" \n\r\t") + 1);
-    return timeStr;
-}
-
-// Helper function to split a string by a delimiter
-std::vector<std::string> split(const std::string &s, char delimiter) {
-    std::vector<std::string> tokens;
-    std::string token;
-    std::istringstream tokenStream(s);
-    while (std::getline(tokenStream, token, delimiter)) {
-        tokens.push_back(token);
-    }
-    return tokens;
-}
+// DEPRECATED: This file has been moved to src/server/
+// Please use the Linux-compatible modular version in src/server/
+// 
+// Build with: make all
+// Run with: make run-server
+//
+// See BUILD_GUIDE_LINUX.md for complete instructions
 
 // Thread function to handle a connected TCP client
 void handleClient(SOCKET clientSock) {
